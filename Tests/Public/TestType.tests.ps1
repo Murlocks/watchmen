@@ -12,7 +12,7 @@ InModuleScope Watchmen {
                 }
             }
             TestType 'simple'
-            $script:watchmen.ThisTest.Type | should be 'simple'
+            $script:watchmen.ThisTest.Type | should -be 'simple'
         }
     }
 }

@@ -7,12 +7,12 @@ InModuleScope Watchmen {
 
         it 'Returns a [Watchmen.Notifier.LogFile] object' {
             $o = LogFile 'c:\temp\watchmen.log'
-            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.LogFile' | should be $true
+            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.LogFile' | should -be $true
         }
 
         it 'Should require the -Path parameter' {
             $func = Get-Command -Name LogFile
-            $func.Parameters.Path.Attributes.Mandatory | should be $true    
+            $func.Parameters.Path.Attributes.Mandatory | should -be $true    
         }
     }
 }

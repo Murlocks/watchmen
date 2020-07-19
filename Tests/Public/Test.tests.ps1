@@ -12,7 +12,7 @@ InModuleScope Watchmen {
                 }
             }
             Test 'services'
-            $script:watchmen.ThisTest.Test | should be 'services'
+            $script:watchmen.ThisTest.Test | should -be 'services'
         }
     }
 }

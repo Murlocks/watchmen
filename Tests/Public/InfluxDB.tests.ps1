@@ -22,12 +22,12 @@ InModuleScope Watchmen {
                 NotifierCondition = $When
             }
             $o = InfluxDB -Options $i
-            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.InfluxDB' | should be $true
+            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.InfluxDB' | should -be $true
         }
 
         it 'Should require the -Options parameter' {
             $func = Get-Command -Name InfluxDB
-            $func.Parameters.Options.Attributes.Mandatory | should be $true    
+            $func.Parameters.Options.Attributes.Mandatory | should -be $true    
         }
     }
 }

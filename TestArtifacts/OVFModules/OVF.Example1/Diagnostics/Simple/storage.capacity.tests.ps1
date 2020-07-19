@@ -21,18 +21,18 @@ Describe 'Storage Capacity' {
 
         # System drive space
         it "System volume [$($sysDrive.DriveLetter)] has greater than [$FreeSystemDriveThreshold] MB free" {                        
-            ($sysDrive.SizeRemaining / 1MB) -ge $FreeSystemDriveThreshold | should be $true
+            ($sysDrive.SizeRemaining / 1MB) -ge $FreeSystemDriveThreshold | should -be $true
         }
                 
         # Non-system drive space
         foreach ($volume in $nonSysDrives) {
             $driveLetter = $volume.DriveLetter
             it "Non-System volume [$driveLetter] has greater than [$FreeNonSystemDriveThreshold] MB free" {
-                ($volume.SizeRemaining / 1MB) -ge $FreeNonSystemDriveThreshold | should be $true
+                ($volume.SizeRemaining / 1MB) -ge $FreeNonSystemDriveThreshold | should -be $true
             }
             
             it "Non-System volume [$driveLetter] has greater than [$FreeNonSystemDriveThresholdPct%] free" {
-                ($volume.SizeRemaining / $volume.Size) -ge $FreeNonSystemDriveThresholdPct | should be $true
+                ($volume.SizeRemaining / $volume.Size) -ge $FreeNonSystemDriveThresholdPct | should -be $true
             }
         }
     }

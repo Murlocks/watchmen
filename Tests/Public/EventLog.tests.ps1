@@ -12,12 +12,12 @@ InModuleScope Watchmen {
                 EventId = 1         
             }
             $o = EventLog -Options $e
-            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.EventLog' | should be $true
+            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.EventLog' | should -be $true
         }
 
         it 'Should require the -Options parameter' {
             $func = Get-Command -Name EventLog
-            $func.Parameters.Options.Attributes.Mandatory | should be $true    
+            $func.Parameters.Options.Attributes.Mandatory | should -be $true    
         }
     }
 }

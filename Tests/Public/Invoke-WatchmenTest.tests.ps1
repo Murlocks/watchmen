@@ -80,7 +80,7 @@ InModuleScope Watchmen {
 
             it 'Passes test results back' {
                 $r = $p | Invoke-WatchmenTest -PassThru -WarningAction SilentlyContinue
-                $r | should not benullorempty
+                $r | should -not -benullorempty
             }
         
             it 'Ran a failing test and executed the notifier(s)' {

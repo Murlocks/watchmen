@@ -53,27 +53,27 @@ InModuleScope Watchmen {
         }
 
         it 'Email notifier defined' {
-            $script:Watchmen.Options.Notifiers.email | should not benullorempty
+            $script:Watchmen.Options.Notifiers.email | should -not -benullorempty
         }
 
         it 'Eventlog notifier defined' {
-            $script:Watchmen.Options.Notifiers.eventlog | should not benullorempty
+            $script:Watchmen.Options.Notifiers.eventlog | should -not -benullorempty
         }
 
         it 'LogFile notifier defined' {
-            $script:Watchmen.Options.Notifiers.logfile | should not benullorempty
+            $script:Watchmen.Options.Notifiers.logfile | should -not -benullorempty
         }
 
         it 'PowerShell notifier defined' {
-            $script:Watchmen.Options.Notifiers.powershell | should not benullorempty
+            $script:Watchmen.Options.Notifiers.powershell | should -not -benullorempty
         }
 
         it 'Slack notifier defined' {
-            $script:Watchmen.Options.Notifiers.slack | should not benullorempty
+            $script:Watchmen.Options.Notifiers.slack | should -not -benullorempty
         }
 
         it 'Syslog notifier defined' {
-            $script:Watchmen.Options.Notifiers.syslog | should not benullorempty
+            $script:Watchmen.Options.Notifiers.syslog | should -not -benullorempty
         }
     }
 }

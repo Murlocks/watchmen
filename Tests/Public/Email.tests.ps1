@@ -22,12 +22,12 @@ InModuleScope Watchmen {
                 To = 'noreply@example.com'
             }
             $o = Email -Options $e
-            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.Email' | should be $true
+            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.Email' | should -be $true
         }
 
         it 'Should require the -Options parameter' {
             $func = Get-Command -Name Email
-            $func.Parameters.Options.Attributes.Mandatory | should be $true    
+            $func.Parameters.Options.Attributes.Mandatory | should -be $true    
         }
     }
 }

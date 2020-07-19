@@ -15,12 +15,12 @@ InModuleScope Watchmen {
                 IconEmoji = ':fire:'
             }
             $o = Slack -Options $s
-            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.Slack' | should be $true
+            $o.PSObject.TypeNames -contains 'Watchmen.Notifier.Slack' | should -be $true
         }
 
         it 'Should require the -Options parameter' {
             $func = Get-Command -Name Slack
-            $func.Parameters.Options.Attributes.Mandatory | should be $true    
+            $func.Parameters.Options.Attributes.Mandatory | should -be $true    
         }
     }
 }

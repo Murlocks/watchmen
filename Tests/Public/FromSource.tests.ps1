@@ -12,7 +12,7 @@ InModuleScope Watchmen {
                 }
             }
             FromSource 'PSGallery'
-            $script:watchmen.ThisTest.Source | should be 'PSGallery'
+            $script:watchmen.ThisTest.Source | should -be 'PSGallery'
         }
     }
 }

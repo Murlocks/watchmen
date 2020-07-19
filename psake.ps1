@@ -68,7 +68,6 @@ task ExportFunctions {
 task Deploy -depends Test, GenerateHelp {
     # Gate deployment
     if(
-        $ENV:BHBuildSystem -ne 'Unknown' -and
         $ENV:BHBranchName -eq "master" -and
         $ENV:BHCommitMessage -match '!deploy'
     ) {

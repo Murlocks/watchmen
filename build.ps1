@@ -46,7 +46,7 @@ Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
 'BuildHelpers', 'psake' | Resolve-Module
 
-Set-BuildEnvironment
+Set-BuildEnvironment -Force
 
 Invoke-psake -buildFile "$PSScriptRoot\psake.ps1" -taskList $Task -nologo -Verbose:$VerbosePreference
 exit ( [int]( -not $psake.build_success ) )

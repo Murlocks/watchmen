@@ -1,127 +1,151 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<helpItems schema="maml">
-
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Get-WatchmenTest</command:name>
-<command:verb>Get</command:verb>
-<command:noun>WatchmenTest</command:noun>
-<maml:description><maml:para>Reads one or more Watchmen files and returns the test objects.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Reads one or more Watchmen files and returns the test objects.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Get-WatchmenTest</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>Path to to a Watchmen file or a folder containing Watchmen files.
-</maml:para>
-<maml:para>If a path to a folder is given, only files with a *.watchmen.ps1 convention are processed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>Current directory</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Recurse</maml:name>
-<maml:Description><maml:para>Recursively read in Watchmen files from given path.
-</maml:para>
-<maml:para>Only Watchmen files with a *.watchmen.ps1 convention are processed.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>Path to to a Watchmen file or a folder containing Watchmen files.
-</maml:para>
-<maml:para>If a path to a folder is given, only files with a *.watchmen.ps1 convention are processed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>Current directory</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Recurse</maml:name>
-<maml:Description><maml:para>Recursively read in Watchmen files from given path.
-</maml:para>
-<maml:para>Only Watchmen files with a *.watchmen.ps1 convention are processed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>System.String[]</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>Watchmen.Test[]</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; $tests = Get-WatchmenTest -Path c:\watchmen\my.watchmen.ps1</dev:code>
-<dev:remarks><maml:para>Reads in the Watchmen file c:\watchmen\my.watchmen.ps1
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>PS C:\&gt; $allTests = Get-WatchmenTest -Path c:\watchmen -Recurse</dev:code>
-<dev:remarks><maml:para>Recursively reads in Watchmen files from path c:\watchmen
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Get-WatchmenTest.md</maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Invoke-WatchmenTest</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Email</command:name>
-<command:verb>Email</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies an Email notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies an Email notifier.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'Email' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-<maml:para>The 'Subject' and Message' fields inside the hashtable for this function support string interpolation. The following keywords can be placed inside the Subject or Message strings using the convention #{keyword}. When the Email notifier is executed these placeholders will be replaced with values from the test result:
-</maml:para>
-<maml:para>computername     - Computer name test was executed on module           - OVF module name file             - Path to Pester test executed describe         - Name of 'Describe' block in Pester test context          - Name of 'Context' block in Pester test test             - Name of 'It' block in Pester test result           - Result of test. 'Passed' or 'Failed' failureMessage   - Failure message from Pester test duration         - Duration of Pester test
-</maml:para>
-<maml:para>Example:     subject = 'Watchmen alert - #{computername} - [#{test}] failed!'
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Email</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hashtable of values needed to send a SMTP email.
-</maml:para>
-<maml:para>[string]FromAddress         - REQUIRED - From address for email
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-WatchmenTest</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>WatchmenTest</command:noun>
+      <maml:description>
+        <maml:para>Reads one or more Watchmen files and returns the test objects.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Reads one or more Watchmen files and returns the test objects.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-WatchmenTest</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>Path to to a Watchmen file or a folder containing Watchmen files.</maml:para>
+            <maml:para>If a path to a folder is given, only files with a *.watchmen.ps1 convention are processed.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Current directory</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Recurse</maml:name>
+          <maml:Description>
+            <maml:para>Recursively read in Watchmen files from given path.</maml:para>
+            <maml:para>Only Watchmen files with a *.watchmen.ps1 convention are processed.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>Path to to a Watchmen file or a folder containing Watchmen files.</maml:para>
+          <maml:para>If a path to a folder is given, only files with a *.watchmen.ps1 convention are processed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Current directory</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Recurse</maml:name>
+        <maml:Description>
+          <maml:para>Recursively read in Watchmen files from given path.</maml:para>
+          <maml:para>Only Watchmen files with a *.watchmen.ps1 convention are processed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Watchmen.Test[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $tests = Get-WatchmenTest -Path c:\watchmen\my.watchmen.ps1</dev:code>
+        <dev:remarks>
+          <maml:para>Reads in the Watchmen file c:\watchmen\my.watchmen.ps1</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $allTests = Get-WatchmenTest -Path c:\watchmen -Recurse</dev:code>
+        <dev:remarks>
+          <maml:para>Recursively reads in Watchmen files from path c:\watchmen</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Get-WatchmenTest.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Invoke-WatchmenTest</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Email</command:name>
+      <command:verb>Email</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies an Email notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies an Email notifier.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'Email' function outside of a 'Notifies' block will throw an error.</maml:para>
+      <maml:para>The 'Subject' and Message' fields inside the hashtable for this function support string interpolation. The following keywords can be placed inside the Subject or Message strings using the convention #{keyword}. When the Email notifier is executed these placeholders will be replaced with values from the test result:</maml:para>
+      <maml:para>computername     - Computer name test was executed on module           - OVF module name file             - Path to Pester test executed describe         - Name of 'Describe' block in Pester test context          - Name of 'Context' block in Pester test test             - Name of 'It' block in Pester test result           - Result of test. 'Passed' or 'Failed' failureMessage   - Failure message from Pester test duration         - Duration of Pester test</maml:para>
+      <maml:para>Example:     subject = 'Watchmen alert - #{computername} - [#{test}] failed!'</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Email</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Options</maml:name>
+          <maml:Description>
+            <maml:para>Hashtable of values needed to send a SMTP email.</maml:para>
+            <maml:para>[string]FromAddress         - REQUIRED - From address for email
 [string[]]To                - REQUIRED - Array of email addresses to send to
 [string]SMTPServer          - REQUIRED - SMTP server FQDN or IP address
 [int]Port                   - REQUIRED - SMTP port (usually 25)
@@ -129,29 +153,35 @@
 [string]Message             - OPTIONAL - Message for email
 [pscredential]Credential    - OPTIONAL - Credential to authenticate to SMTP server with
 [bool]UseSSL                - OPTINOAL - Use SSL when connecting to SMTP server
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hashtable of values needed to send a SMTP email.
-</maml:para>
-<maml:para>[string]FromAddress         - REQUIRED - From address for email
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Options</maml:name>
+        <maml:Description>
+          <maml:para>Hashtable of values needed to send a SMTP email.</maml:para>
+          <maml:para>[string]FromAddress         - REQUIRED - From address for email
 [string[]]To                - REQUIRED - Array of email addresses to send to
 [string]SMTPServer          - REQUIRED - SMTP server FQDN or IP address
 [int]Port                   - REQUIRED - SMTP port (usually 25)
@@ -159,44 +189,57 @@
 [string]Message             - OPTIONAL - Message for email
 [pscredential]Credential    - OPTIONAL - Credential to authenticate to SMTP server with
 [bool]UseSSL                - OPTINOAL - Use SSL when connecting to SMTP server
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest MyAppOVF {
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest MyAppOVF {
     Notifies {
         Email @{
             fromAddress = 'watchmen@mydomain.tld'
@@ -207,12 +250,13 @@
         }
     }
 }</dev:code>
-<dev:remarks><maml:para>Add an Email notifier to a WatchmenTest block.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Add an Email notifier to a WatchmenTest block.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     notifies {
         email @{
             fromAddress = 'watchmen@mydomain.tld'
@@ -223,97 +267,121 @@
         }
     }
 }</dev:code>
-<dev:remarks><maml:para>Add an Email notifier to a WatchmenOptions block.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Email.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>EventLog</command:name>
-<command:verb>EventLog</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies an EventLog notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies an EventLog notifier.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'EventLog' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>EventLog</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hashtable of values needed to create an event log entry.
-</maml:para>
-<maml:para>[int]EventId         - REQUIRED - Specifies the event identifier. The maximum allowed value for the EventId parameter is 65535.
+        <dev:remarks>
+          <maml:para>Add an Email notifier to a WatchmenOptions block.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Email.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>EventLog</command:name>
+      <command:verb>EventLog</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies an EventLog notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies an EventLog notifier.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'EventLog' function outside of a 'Notifies' block will throw an error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>EventLog</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Options</maml:name>
+          <maml:Description>
+            <maml:para>Hashtable of values needed to create an event log entry.</maml:para>
+            <maml:para>[int]EventId         - REQUIRED - Specifies the event identifier. The maximum allowed value for the EventId parameter is 65535.
 [string]EventType    - REQUIRED - The event type. Valid values are Error, Warning, Information, SuccessAudit, and FailureAudit.
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
-<dev:type><maml:name>Hashtable[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hashtable of values needed to create an event log entry.
-</maml:para>
-<maml:para>[int]EventId         - REQUIRED - Specifies the event identifier. The maximum allowed value for the EventId parameter is 65535.
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Options</maml:name>
+        <maml:Description>
+          <maml:para>Hashtable of values needed to create an event log entry.</maml:para>
+          <maml:para>[int]EventId         - REQUIRED - Specifies the event identifier. The maximum allowed value for the EventId parameter is 65535.
 [string]EventType    - REQUIRED - The event type. Valid values are Error, Warning, Information, SuccessAudit, and FailureAudit.
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
-<dev:type><maml:name>Hashtable[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest MyAppOVF {
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest MyAppOVF {
     Notifies {
         EventLog @{
             eventid = '1'
@@ -321,12 +389,13 @@
         }
     }
 }</dev:code>
-<dev:remarks><maml:para>Add an EventLog notifier to a WatchmenTest block.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Add an EventLog notifier to a WatchmenTest block.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     notifies {
         EventLog @{
             eventid = '15'
@@ -334,107 +403,134 @@
         }
     }
 }</dev:code>
-<dev:remarks><maml:para>Add an EventLog notifier to a WatchmenOptions block.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-EventLog.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>FromSource</command:name>
-<command:verb>FromSource</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies the PowerShell repository source to retrieve module from.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies the PowerShell repository source to retrieve module from. This repository must already be registered on the system.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>FromSource</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Source</maml:name>
-<maml:Description><maml:para>The PowerShell repository name to search for the module in.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Source</maml:name>
-<maml:Description><maml:para>The PowerShell repository name to search for the module in.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>Add an EventLog notifier to a WatchmenOptions block.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-EventLog.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>FromSource</command:name>
+      <command:verb>FromSource</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies the PowerShell repository source to retrieve module from.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies the PowerShell repository source to retrieve module from. This repository must already be registered on the system.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>FromSource</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Source</maml:name>
+          <maml:Description>
+            <maml:para>The PowerShell repository name to search for the module in.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Source</maml:name>
+        <maml:Description>
+          <maml:para>The PowerShell repository name to search for the module in.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     fromSource 'PSGallery'
 }</dev:code>
-<dev:remarks><maml:para>Tells Watchmen to download and install the 'MyAppOVF' module from the public PowerShell Gallery.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>WatchmenTest 'MyOVFModule' {
+        <dev:remarks>
+          <maml:para>Tells Watchmen to download and install the 'MyAppOVF' module from the public PowerShell Gallery.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyOVFModule' {
     fromSource 'PrivateRepository
 }</dev:code>
-<dev:remarks><maml:para>Tells Watchmen to download and install the 'MyAppOVF' module from a private repository called 'PrivateRepository'.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-FromSource.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>InfluxDB</command:name>
-<command:verb>InfluxDB</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies an InfluxDB notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies an InfluxDB notifier.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'InfluxDB' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>InfluxDB</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hashtable of values needed to send a metric to InfluxDB.
-</maml:para>
-<maml:para>[string]Url                 - REQUIRED - URL of InfluxDB
+        <dev:remarks>
+          <maml:para>Tells Watchmen to download and install the 'MyAppOVF' module from a private repository called 'PrivateRepository'.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-FromSource.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>InfluxDB</command:name>
+      <command:verb>InfluxDB</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies an InfluxDB notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies an InfluxDB notifier.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'InfluxDB' function outside of a 'Notifies' block will throw an error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>InfluxDB</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Options</maml:name>
+          <maml:Description>
+            <maml:para>Hashtable of values needed to send a metric to InfluxDB.</maml:para>
+            <maml:para>[string]Url                 - REQUIRED - URL of InfluxDB
 [string[]]Database          - REQUIRED - InfluxDB database to insert into
 [int]Port                   - OPTIONAL - Port of InfluxDB
 [string]MeasurementName     - OPTIONAL - The measurement name to store in InfluxDB
@@ -443,33 +539,40 @@
 [int]Timeout                - OPTIONAL - HTTP timeout
 [pscredential]Credential    - OPTIONAL - Credential to authenticate to InfluxDB with
 [bool]SkipSSLVerification   - OPTIONAL - Skip SSL verification when connecting to InfluxDB
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hashtable of values needed to send a metric to InfluxDB.
-</maml:para>
-<maml:para>[string]Url                 - REQUIRED - URL of InfluxDB
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Options</maml:name>
+        <maml:Description>
+          <maml:para>Hashtable of values needed to send a metric to InfluxDB.</maml:para>
+          <maml:para>[string]Url                 - REQUIRED - URL of InfluxDB
 [string[]]Database          - REQUIRED - InfluxDB database to insert into
 [int]Port                   - OPTIONAL - Port of InfluxDB
 [string]MeasurementName     - OPTIONAL - The measurement name to store in InfluxDB
@@ -478,44 +581,57 @@
 [int]Timeout                - OPTIONAL - HTTP timeout
 [pscredential]Credential    - OPTIONAL - Credential to authenticate to InfluxDB with
 [bool]SkipSSLVerification   - OPTIONAL - Skip SSL verification when connecting to InfluxDB
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest MyAppOVF {
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest MyAppOVF {
     Notifies {
         InfluxDB {
             url 'http://influxdb.mydomain.tld'
@@ -530,103 +646,131 @@
         } -when 'always'
     }
 }</dev:code>
-<dev:remarks><maml:para>Add an InfluxDB notifier to a WatchmenTest block.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-InfluxDB.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>LogFile</command:name>
-<command:verb>LogFile</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies a LogFile notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies a LogFile notifier. This command accepts one parameter which is the path to a log file to either create or append to.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'EventLog' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>LogFile</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>One or more file paths to append test result to. If the file(s) do not exist, they will be created.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>One or more file paths to append test result to. If the file(s) do not exist, they will be created.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest MyAppOVF {
+        <dev:remarks>
+          <maml:para>Add an InfluxDB notifier to a WatchmenTest block.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-InfluxDB.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LogFile</command:name>
+      <command:verb>LogFile</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies a LogFile notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies a LogFile notifier. This command accepts one parameter which is the path to a log file to either create or append to.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'EventLog' function outside of a 'Notifies' block will throw an error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LogFile</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>One or more file paths to append test result to. If the file(s) do not exist, they will be created.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>One or more file paths to append test result to. If the file(s) do not exist, they will be created.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest MyAppOVF {
     Notifies {
         LogFile '\\fileserver01\watchmen\watchmen.log'
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a LogFile notifier to a WatchmenTest block.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example2</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Adds a LogFile notifier to a WatchmenTest block.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------- Example2 ---------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     Notifies {
         LogFile @{
             '\\fileserver01\watchmen\watchmen.log',
@@ -634,87 +778,114 @@
         }
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a LogFile notifier to a WatchmenOptions block.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-LogFile.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Notifies</command:name>
-<command:verb>Notifies</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies one or more notifiers to be executed upon any failing tests.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies one or more notifiers to be executed upon any failing tests.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Notifies</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Script</maml:name>
-<maml:Description><maml:para>Scriptblock listing notifier functions to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>{{Fill When Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Script</maml:name>
-<maml:Description><maml:para>Scriptblock listing notifier functions to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>{{Fill When Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Adds a LogFile notifier to a WatchmenOptions block.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-LogFile.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Notifies</command:name>
+      <command:verb>Notifies</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies one or more notifiers to be executed upon any failing tests.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies one or more notifiers to be executed upon any failing tests.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Notifies</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Script</maml:name>
+          <maml:Description>
+            <maml:para>Scriptblock listing notifier functions to execute.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill When Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Script</maml:name>
+        <maml:Description>
+          <maml:para>Scriptblock listing notifier functions to execute.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill When Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     Notifies {
         Email @{
             FromAddress = 'watchmen@mydomain.tld'
@@ -740,102 +911,122 @@
         Syslog 'syslog.mydomain.tld'
     }
 }</dev:code>
-<dev:remarks><maml:para>Specifies various notifiers to be executed upon any failing tests.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Notifies.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Parameters</command:name>
-<command:verb>Parameters</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies one or more parameters to pass into a Pester test.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies one or more parameters in the form of a hashtable to pass into a Pester test. These parameters must match script parameters defined in the Pester test.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Parameters</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Parameters</maml:name>
-<maml:Description><maml:para>Hashtable of parameters to pass into Pester test.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Parameters</maml:name>
-<maml:Description><maml:para>Hashtable of parameters to pass into Pester test.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
-<dev:type><maml:name>Hashtable</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>Specifies various notifiers to be executed upon any failing tests.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Notifies.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Parameters</command:name>
+      <command:verb>Parameters</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies one or more parameters to pass into a Pester test.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies one or more parameters in the form of a hashtable to pass into a Pester test. These parameters must match script parameters defined in the Pester test.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Parameters</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Parameters</maml:name>
+          <maml:Description>
+            <maml:para>Hashtable of parameters to pass into Pester test.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Parameters</maml:name>
+        <maml:Description>
+          <maml:para>Hashtable of parameters to pass into Pester test.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     Parameters {
         FreeSpaceThreshold = 40000
     }
 }</dev:code>
-<dev:remarks><maml:para>Defines a Watchmen test to execute the OVF module 'MyAppOVF' and pass the parameter 'FreeSpaceThreshold' to the Pester test inside the OVF module.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Parameters.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>PowerShell</command:name>
-<command:verb>PowerShell</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies an PowerShell notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies an PowerShell notifier.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'PowerShell' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-<maml:para>The PowerShell notifier accepts either a inline script block to execute, or a path to a PowerShell script file.
-</maml:para>
-<maml:para>When Watchmen execute the inline script block or script file, the OVF test results object will be passed in. When executing an inline script block, this object will be available as $args[0]. When executing a script file the object will be passed in as an unnamed parameter.
-</maml:para>
-<maml:para>The following properties are available in the OVF test result object:
-</maml:para>
-<maml:para>Error                       - StackTrace message of failing Pester test
+        <dev:remarks>
+          <maml:para>Defines a Watchmen test to execute the OVF module 'MyAppOVF' and pass the parameter 'FreeSpaceThreshold' to the Pester test inside the OVF module.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Parameters.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>PowerShell</command:name>
+      <command:verb>PowerShell</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies an PowerShell notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies an PowerShell notifier.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'PowerShell' function outside of a 'Notifies' block will throw an error.</maml:para>
+      <maml:para>The PowerShell notifier accepts either a inline script block to execute, or a path to a PowerShell script file.</maml:para>
+      <maml:para>When Watchmen execute the inline script block or script file, the OVF test results object will be passed in. When executing an inline script block, this object will be available as $args[0]. When executing a script file the object will be passed in as an unnamed parameter.</maml:para>
+      <maml:para>The following properties are available in the OVF test result object:</maml:para>
+      <maml:para>Error                       - StackTrace message of failing Pester test
 FileName                    - Path to Pester test script withing the OVF module
 Module                      - PowerShell module of the OVF test
 Name                        - Name of the OVF test executed
@@ -853,221 +1044,282 @@ StackTrace              - StackTrace message of failing Pester test
 Time                    - Time Pester test took to execute
 Result                      - Pass or fail status of test. Values are [Passed] or [Failed]
 ShortName                   - File name of Pester test
-
 </maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>PowerShell</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>Path to a PowerShell script to execute upon any failing tests.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-<command:syntaxItem><maml:name>PowerShell</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>ScriptBlock</maml:name>
-<maml:Description><maml:para>Script block to execute upon any failing tests.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>Path to a PowerShell script to execute upon any failing tests.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>ScriptBlock</maml:name>
-<maml:Description><maml:para>Script block to execute upon any failing tests.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenOptions {
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>PowerShell</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>Path to a PowerShell script to execute upon any failing tests.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>PowerShell</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>ScriptBlock</maml:name>
+          <maml:Description>
+            <maml:para>Script block to execute upon any failing tests.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>Path to a PowerShell script to execute upon any failing tests.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>ScriptBlock</maml:name>
+        <maml:Description>
+          <maml:para>Script block to execute upon any failing tests.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     powershell {
         Write-Host "Something bad happended! Test [$($args[0]) failed with error [$($args[0].Error)]"
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a PowerShell notifier to a WatchmenOptions block. This PowerShell script block will display a message using values contains withing test result object.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>WatchmenTest {
+        <dev:remarks>
+          <maml:para>Adds a PowerShell notifier to a WatchmenOptions block. This PowerShell script block will display a message using values contains withing test result object.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>WatchmenTest {
     powershell '\notifier.ps1'
 }</dev:code>
-<dev:remarks><maml:para>Adds a PowerShell notifier to an individual Watchmen test. This PowerShell notifier will execute the 'notifier.ps1' script.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-PowerShell.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Slack</command:name>
-<command:verb>Slack</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies an EventLog notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies an Slack notifier.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'Slack' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Slack</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hash table of required parameters to send a Slack message using the PSSlack module.
-</maml:para>
-<maml:para>[string]Token       - REQUIRED - Webhook URL to send message to
+        <dev:remarks>
+          <maml:para>Adds a PowerShell notifier to an individual Watchmen test. This PowerShell notifier will execute the 'notifier.ps1' script.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-PowerShell.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Slack</command:name>
+      <command:verb>Slack</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies an EventLog notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies an Slack notifier.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'Slack' function outside of a 'Notifies' block will throw an error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Slack</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Options</maml:name>
+          <maml:Description>
+            <maml:para>Hash table of required parameters to send a Slack message using the PSSlack module.</maml:para>
+            <maml:para>[string]Token       - REQUIRED - Webhook URL to send message to
 [string]Channel     - REQUIRED - Message for email
 [string]AuthorName  - REQUIRED - Name message should appear from
 [string]PreText     - OPTIONAL - Message to display ahead of message
 [string]IconUrl     - OPTIONAL - URL of icon to display alongside message
 [string]IconEmoji   - OPTIONAL - Emoji to display alongside message
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
-<dev:type><maml:name>Hashtable[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Options</maml:name>
-<maml:Description><maml:para>Hash table of required parameters to send a Slack message using the PSSlack module.
-</maml:para>
-<maml:para>[string]Token       - REQUIRED - Webhook URL to send message to
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Hashtable[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Options</maml:name>
+        <maml:Description>
+          <maml:para>Hash table of required parameters to send a Slack message using the PSSlack module.</maml:para>
+          <maml:para>[string]Token       - REQUIRED - Webhook URL to send message to
 [string]Channel     - REQUIRED - Message for email
 [string]AuthorName  - REQUIRED - Name message should appear from
 [string]PreText     - OPTIONAL - Message to display ahead of message
 [string]IconUrl     - OPTIONAL - URL of icon to display alongside message
 [string]IconEmoji   - OPTIONAL - Emoji to display alongside message
-
 </maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
-<dev:type><maml:name>Hashtable[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenOptions {
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Hashtable[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Hashtable[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     slack @{
         Token = 'asdfqwerty12345'
         Channel = '#Watchmen_Alerts'
@@ -1076,12 +1328,13 @@ ShortName                   - File name of Pester test
         IconEmoji = ':fire:'
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a Slack notifier to a WatchmenOptions block. The hashtable specified includes all the required parameters to send a Slack message using the PSSlack module.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>WatchmenTest {
+        <dev:remarks>
+          <maml:para>Adds a Slack notifier to a WatchmenOptions block. The hashtable specified includes all the required parameters to send a Slack message using the PSSlack module.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>WatchmenTest {
     slack @{
         Token = 'asdfqwerty12345'
         Channel = '#Watchmen_Alerts'
@@ -1090,377 +1343,491 @@ ShortName                   - File name of Pester test
         IconUrl = 'http://myicons.mydomain.tld/icon02.png'
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a Slack notifier to a WatchmenTest block. The hashtable specified includes all the required parameters to send a Slack message using the PSSlack module.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Slack.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Syslog</command:name>
-<command:verb>Syslog</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies a Syslog notifier.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies a Syslog notifier. This command accepts one parameter which is the IP address or FQDN of a syslog endpoint to send messages to.
-</maml:para>
-<maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'Syslog' function outside of a 'Notifies' block will throw an error.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Syslog</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Endpoints</maml:name>
-<maml:Description><maml:para>One or more IP addresses/FQDNs of syslog endpoints to send messages to.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Endpoints</maml:name>
-<maml:Description><maml:para>One or more IP addresses/FQDNs of syslog endpoints to send messages to.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>When</maml:name>
-<maml:Description><maml:para>Specifies when notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest MyAppOVF {
+        <dev:remarks>
+          <maml:para>Adds a Slack notifier to a WatchmenTest block. The hashtable specified includes all the required parameters to send a Slack message using the PSSlack module.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Slack.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Syslog</command:name>
+      <command:verb>Syslog</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies a Syslog notifier.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies a Syslog notifier. This command accepts one parameter which is the IP address or FQDN of a syslog endpoint to send messages to.</maml:para>
+      <maml:para>This is not intended to be used anywhere but inside a 'Notifies' block inside a Watchmen file. Directly calling the 'Syslog' function outside of a 'Notifies' block will throw an error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Syslog</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Endpoints</maml:name>
+          <maml:Description>
+            <maml:para>One or more IP addresses/FQDNs of syslog endpoints to send messages to.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>When</maml:name>
+          <maml:Description>
+            <maml:para>Specifies when notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Endpoints</maml:name>
+        <maml:Description>
+          <maml:para>One or more IP addresses/FQDNs of syslog endpoints to send messages to.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>When</maml:name>
+        <maml:Description>
+          <maml:para>Specifies when notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest MyAppOVF {
     Notifies {
         syslog 'localhost'
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a Syslog notifier to a WatchmenTest block.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example2</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Adds a Syslog notifier to a WatchmenTest block.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>--------------------------- Example2 ---------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     Notifies {
         syslog '192.168.100.100'
     }
 }</dev:code>
-<dev:remarks><maml:para>Adds a Syslog notifier to a WatchmenOptions block.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Syslog.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Test</command:name>
-<command:verb>Test</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies the 'Describe' block in a Pester test to execute.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies the 'Describe' block in a Pester test to execute. Pester / OVF tests can include multiple 'Describe' blocks to logically seperate tests. This parameter allows you to only execute the designated 'Describe' block name.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Test</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Test</maml:name>
-<maml:Description><maml:para>Name of the 'Describe' block in the Pester test.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Test</maml:name>
-<maml:Description><maml:para>Name of the 'Describe' block in the Pester test.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>Adds a Syslog notifier to a WatchmenOptions block.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Syslog.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Test</command:name>
+      <command:verb>Test</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies the 'Describe' block in a Pester test to execute.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies the 'Describe' block in a Pester test to execute. Pester / OVF tests can include multiple 'Describe' blocks to logically seperate tests. This parameter allows you to only execute the designated 'Describe' block name.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Test</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Test</maml:name>
+          <maml:Description>
+            <maml:para>Name of the 'Describe' block in the Pester test.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Test</maml:name>
+        <maml:Description>
+          <maml:para>Name of the 'Describe' block in the Pester test.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     Test 'Services'
 }</dev:code>
-<dev:remarks><maml:para>Tells Watchmen to only execute tests within the 'Describe' block 'Services' inside the OVF module 'MyAppOVF.'
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Test.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>TestType</command:name>
-<command:verb>TestType</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies the OVF test type to execute. This may be 'Simple', 'Comprehensive', or 'All'.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies the OVF test type to execute. This may be 'Simple', 'Comprehensive', or 'All'. 'All' is the default if not specified.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>TestType</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Type</maml:name>
-<maml:Description><maml:para>OVF Test type to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Simple</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">Comprehensive</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">All</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Type</maml:name>
-<maml:Description><maml:para>OVF Test type to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>Tells Watchmen to only execute tests within the 'Describe' block 'Services' inside the OVF module 'MyAppOVF.'</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Test.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>TestType</command:name>
+      <command:verb>TestType</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies the OVF test type to execute. This may be 'Simple', 'Comprehensive', or 'All'.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies the OVF test type to execute. This may be 'Simple', 'Comprehensive', or 'All'. 'All' is the default if not specified.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>TestType</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:Description>
+            <maml:para>OVF Test type to execute.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Simple</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Comprehensive</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">All</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Type</maml:name>
+        <maml:Description>
+          <maml:para>OVF Test type to execute.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     TestType 'Simple'
 }</dev:code>
-<dev:remarks><maml:para>Tells Watchmen to only execute 'Simple' tests within the 'MyAppOVF' module.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>Tells Watchmen to only execute 'Simple' tests within the 'MyAppOVF' module.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     TestType 'Comprehensive'
 }</dev:code>
-<dev:remarks><maml:para>Tells Watchmen to only execute 'Comprehensive' tests within the 'MyAppOVF' module.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-TestType.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Version</command:name>
-<command:verb>Version</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies the version of the OVF module to execute tests from.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies the version of the OVF module to execute tests from. Since OVF tests are normal PowerShell modules, multiple versions of the module are allowed to be installed on the system. If this parameter is not specified, the latest version of the module will be used.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Version</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Version</maml:name>
-<maml:Description><maml:para>Version of module to execute tests from. If not specified, the latest installed version of the module will be used.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Version</maml:name>
-<maml:Description><maml:para>Version of module to execute tests from. If not specified, the latest installed version of the module will be used.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>Tells Watchmen to only execute 'Comprehensive' tests within the 'MyAppOVF' module.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-TestType.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Version</command:name>
+      <command:verb>Version</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies the version of the OVF module to execute tests from.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies the version of the OVF module to execute tests from. Since OVF tests are normal PowerShell modules, multiple versions of the module are allowed to be installed on the system. If this parameter is not specified, the latest version of the module will be used.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Version</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Version</maml:name>
+          <maml:Description>
+            <maml:para>Version of module to execute tests from. If not specified, the latest installed version of the module will be used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Version</maml:name>
+        <maml:Description>
+          <maml:para>Version of module to execute tests from. If not specified, the latest installed version of the module will be used.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     Version '1.2.3'
 }</dev:code>
-<dev:remarks><maml:para>Teslls Watchmen to execute tests from version 1.2.3 of the 'MyAppOVF' module.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Version.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>WatchmenOptions</command:name>
-<command:verb>WatchmenOptions</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies a global set of options that subsequent Watchmen tests will inherit from.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies a global set of options that subsequent Watchmen tests will inherit from. Specifing notifiers within the WatchmenOptions block allows all subsequent Watchmen tests to use those notifiers in addition to any defined directly on the Watchmen test.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>WatchmenOptions</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Script</maml:name>
-<maml:Description><maml:para>ScriptBlock containing a single command 'Notifies' with the desired notifier commands to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Script</maml:name>
-<maml:Description><maml:para>ScriptBlock containing a single command 'Notifies' with the desired notifier commands to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Teslls Watchmen to execute tests from version 1.2.3 of the 'MyAppOVF' module.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-Version.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>WatchmenOptions</command:name>
+      <command:verb>WatchmenOptions</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies a global set of options that subsequent Watchmen tests will inherit from.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies a global set of options that subsequent Watchmen tests will inherit from. Specifing notifiers within the WatchmenOptions block allows all subsequent Watchmen tests to use those notifiers in addition to any defined directly on the Watchmen test.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>WatchmenOptions</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Script</maml:name>
+          <maml:Description>
+            <maml:para>ScriptBlock containing a single command 'Notifies' with the desired notifier commands to execute.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Script</maml:name>
+        <maml:Description>
+          <maml:para>ScriptBlock containing a single command 'Notifies' with the desired notifier commands to execute.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     notifies {
         email @{
             fromAddress = 'watchmen@mydomain.tld'
@@ -1488,87 +1855,114 @@ ShortName                   - File name of Pester test
         syslog 'syslog.mydomain.tld'
     }
 }</dev:code>
-<dev:remarks><maml:para>This defines a set of notifiers that will be executed upon any failing Watching tests. All Watchmen tests will execute notifiers specified in WatchmenOptions in addition to any specified directly on the Watchmen test.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-WatchmenOptions.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>WatchmenTest</command:name>
-<command:verb>WatchmenTest</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies an OVF module to execute Pester tests from.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies an OVF module to execute Pester tests from. Optional properties are specified to execute a specific OVF module version, test name or type, override parameters from Pester tests, and to execute notifiers upon any failing tests.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>WatchmenTest</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>OVF module name to execute Pester tests from
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Script</maml:name>
-<maml:Description><maml:para>Scriptblock containing commands to define the specific OVF module and/or test(s) to execute and under what conditions.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Name</maml:name>
-<maml:Description><maml:para>OVF module name to execute Pester tests from
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Script</maml:name>
-<maml:Description><maml:para>Scriptblock containing commands to define the specific OVF module and/or test(s) to execute and under what conditions.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
-<dev:type><maml:name>ScriptBlock</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenTest 'MyAppOVF' {
+        <dev:remarks>
+          <maml:para>This defines a set of notifiers that will be executed upon any failing Watching tests. All Watchmen tests will execute notifiers specified in WatchmenOptions in addition to any specified directly on the Watchmen test.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-WatchmenOptions.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>WatchmenTest</command:name>
+      <command:verb>WatchmenTest</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies an OVF module to execute Pester tests from.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies an OVF module to execute Pester tests from. Optional properties are specified to execute a specific OVF module version, test name or type, override parameters from Pester tests, and to execute notifiers upon any failing tests.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>WatchmenTest</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>OVF module name to execute Pester tests from</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Script</maml:name>
+          <maml:Description>
+            <maml:para>Scriptblock containing commands to define the specific OVF module and/or test(s) to execute and under what conditions.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>OVF module name to execute Pester tests from</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Script</maml:name>
+        <maml:Description>
+          <maml:para>Scriptblock containing commands to define the specific OVF module and/or test(s) to execute and under what conditions.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenTest 'MyAppOVF' {
     version 1.0.0 
     type 'Simple'
     test 'Storage.Capacity'
@@ -1580,282 +1974,371 @@ ShortName                   - File name of Pester test
         logfile '//fileserver01.mydomain.tld/monitoringshare/#{computername}.log'
     }
 }</dev:code>
-<dev:remarks><maml:para>Execute Pester tests from version 1.0.0 of module 'MyAppOVF.' Also only run the 'Simple' test type named 'Storage.Capacity.' If the specified module and/or version is not installed on the system, then download the module from the 'PSGallery' PowerShell repository. When the test is executed, insert the parameter 'FreeSystemDriveThreshold' into the Pester test to override any default value for that parameter. Upon a failing test, execute the 'Logfile' notifier and write an entry to the log file located on a file share.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-WatchmenTest.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>When</command:name>
-<command:verb>When</command:verb>
-<command:noun></command:noun>
-<maml:description><maml:para>Specifies when one or more notifiers should be executed.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Specifies when one or more notifiers should be executed.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>When</maml:name>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Condition</maml:name>
-<maml:Description><maml:para>The condition for when the notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Always</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnSuccess</command:parameterValue>
-<command:parameterValue required="false" variableLength="false">OnFailure</command:parameterValue>
-</command:parameterValueGroup>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>OnFailure</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Condition</maml:name>
-<maml:Description><maml:para>The condition for when the notifier should be executed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>OnFailure</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>WatchmenOptions {
+        <dev:remarks>
+          <maml:para>Execute Pester tests from version 1.0.0 of module 'MyAppOVF.' Also only run the 'Simple' test type named 'Storage.Capacity.' If the specified module and/or version is not installed on the system, then download the module from the 'PSGallery' PowerShell repository. When the test is executed, insert the parameter 'FreeSystemDriveThreshold' into the Pester test to override any default value for that parameter. Upon a failing test, execute the 'Logfile' notifier and write an entry to the log file located on a file share.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-WatchmenTest.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>When</command:name>
+      <command:verb>When</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Specifies when one or more notifiers should be executed.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Specifies when one or more notifiers should be executed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>When</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Condition</maml:name>
+          <maml:Description>
+            <maml:para>The condition for when the notifier should be executed.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Always</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>OnFailure</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Condition</maml:name>
+        <maml:Description>
+          <maml:para>The condition for when the notifier should be executed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>OnFailure</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>WatchmenOptions {
     notifies {
         when 'Always'
     }
 }</dev:code>
-<dev:remarks><maml:para>Tells Watchmen to execute all notifiers regardless if they pass or fail.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-When.md</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Invoke-WatchmenTest</command:name>
-<command:verb>Invoke</command:verb>
-<command:noun>WatchmenTest</command:noun>
-<maml:description><maml:para>Execute one or more Watchmen objects representing OVF tests.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>Execute one or more Watchmen objects representing OVF tests. Upon any failing tests, Watchmen will optionally execute a number of notifier actions such as sending en email, or writing to the event log.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Invoke-WatchmenTest</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>DisableNotifiers</maml:name>
-<maml:Description><maml:para>Do not run any notifiers upon failing OVF tests.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>IncludePesterOutput</maml:name>
-<maml:Description><maml:para>Display Pester output of tests contained in OVF modules.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none"><maml:name>InputObject</maml:name>
-<maml:Description><maml:para>Watchmen object representing tests and notifiers to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
-<dev:type><maml:name>PSObject[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>PassThru</maml:name>
-<maml:Description><maml:para>Return test results after execution.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-<command:syntaxItem><maml:name>Invoke-WatchmenTest</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>DisableNotifiers</maml:name>
-<maml:Description><maml:para>Do not run any notifiers upon failing OVF tests.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>IncludePesterOutput</maml:name>
-<maml:Description><maml:para>Display Pester output of tests contained in OVF modules.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>PassThru</maml:name>
-<maml:Description><maml:para>Return test results after execution.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>One or more paths to Watchmen files, or folders containing Watchmen files.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Recurse</maml:name>
-<maml:Description><maml:para>Recursively search for Watchmen files inside given path.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>DisableNotifiers</maml:name>
-<maml:Description><maml:para>Do not run any notifiers upon failing OVF tests.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>IncludePesterOutput</maml:name>
-<maml:Description><maml:para>Display Pester output of tests contained in OVF modules.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none"><maml:name>InputObject</maml:name>
-<maml:Description><maml:para>Watchmen object representing tests and notifiers to execute.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
-<dev:type><maml:name>PSObject[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>PassThru</maml:name>
-<maml:Description><maml:para>Return test results after execution.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none"><maml:name>Path</maml:name>
-<maml:Description><maml:para>One or more paths to Watchmen files, or folders containing Watchmen files.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-<dev:type><maml:name>String[]</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Recurse</maml:name>
-<maml:Description><maml:para>Recursively search for Watchmen files inside given path.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>System.String[]</maml:name>
-</dev:type>
-<maml:description><maml:para>System.Management.Automation.PSObject[]
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; Invoke-WatchmenTest -Path c:\watchmen\my.watchmen.ps1</dev:code>
-<dev:remarks><maml:para>Invoke All OVF tests defined in Watchmen file c:\watchmen\my.watchmen.ps1
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>$tests = Get-WatchmenTest -Path c:\watchmen\my.watchmen.ps1
+        <dev:remarks>
+          <maml:para>Tells Watchmen to execute all notifiers regardless if they pass or fail.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Help-When.md</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-WatchmenTest</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>WatchmenTest</command:noun>
+      <maml:description>
+        <maml:para>Execute one or more Watchmen objects representing OVF tests.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Execute one or more Watchmen objects representing OVF tests. Upon any failing tests, Watchmen will optionally execute a number of notifier actions such as sending en email, or writing to the event log.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-WatchmenTest</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisableNotifiers</maml:name>
+          <maml:Description>
+            <maml:para>Do not run any notifiers upon failing OVF tests.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludePesterOutput</maml:name>
+          <maml:Description>
+            <maml:para>Display Pester output of tests contained in OVF modules.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:Description>
+            <maml:para>Watchmen object representing tests and notifiers to execute.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
+          <dev:type>
+            <maml:name>PSObject[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Return test results after execution.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Invoke-WatchmenTest</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisableNotifiers</maml:name>
+          <maml:Description>
+            <maml:para>Do not run any notifiers upon failing OVF tests.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>IncludePesterOutput</maml:name>
+          <maml:Description>
+            <maml:para>Display Pester output of tests contained in OVF modules.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Return test results after execution.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>One or more paths to Watchmen files, or folders containing Watchmen files.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Recurse</maml:name>
+          <maml:Description>
+            <maml:para>Recursively search for Watchmen files inside given path.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DisableNotifiers</maml:name>
+        <maml:Description>
+          <maml:para>Do not run any notifiers upon failing OVF tests.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>IncludePesterOutput</maml:name>
+        <maml:Description>
+          <maml:para>Display Pester output of tests contained in OVF modules.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:Description>
+          <maml:para>Watchmen object representing tests and notifiers to execute.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
+        <dev:type>
+          <maml:name>PSObject[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:Description>
+          <maml:para>Return test results after execution.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>One or more paths to Watchmen files, or folders containing Watchmen files.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Recurse</maml:name>
+        <maml:Description>
+          <maml:para>Recursively search for Watchmen files inside given path.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>System.Management.Automation.PSObject[]</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Invoke-WatchmenTest -Path c:\watchmen\my.watchmen.ps1</dev:code>
+        <dev:remarks>
+          <maml:para>Invoke All OVF tests defined in Watchmen file c:\watchmen\my.watchmen.ps1</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>$tests = Get-WatchmenTest -Path c:\watchmen\my.watchmen.ps1
 $tests | Invoke-WatchmenTest -Verbose</dev:code>
-<dev:remarks><maml:para>Read in Watchmen objects and pass via the pipeline to Invoke-WatchmenTest with verbose output.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 3</maml:title>
-<dev:code>$results = Get-WatchmenTest -Path c:\watchmen\my.watchmen.ps1 | Invoke-WatchmenTest -Verbose -IncludePesterOutpull -PassTru</dev:code>
-<dev:remarks><maml:para>Include Pester output and return test results
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 4</maml:title>
-<dev:code>Invoke-WatchmenTest -Path c:\watchmen -Recurse -Verbose -IncludePesterOutput -DisableNotifiers</dev:code>
-<dev:remarks><maml:para>Recursively read Watchmen files in c:\watchmen, execute the tests, but do not run any notifier actions.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Invoke-WatchmenTest.md</maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Get-WatchmenTest</maml:linkText>
-<maml:uri></maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
+        <dev:remarks>
+          <maml:para>Read in Watchmen objects and pass via the pipeline to Invoke-WatchmenTest with verbose output.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>$results = Get-WatchmenTest -Path c:\watchmen\my.watchmen.ps1 | Invoke-WatchmenTest -Verbose -IncludePesterOutpull -PassTru</dev:code>
+        <dev:remarks>
+          <maml:para>Include Pester output and return test results</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 4 --------------------------</maml:title>
+        <dev:code>Invoke-WatchmenTest -Path c:\watchmen -Recurse -Verbose -IncludePesterOutput -DisableNotifiers</dev:code>
+        <dev:remarks>
+          <maml:para>Recursively read Watchmen files in c:\watchmen, execute the tests, but do not run any notifier actions.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/devblackops/watchmen/blob/master/docs/functions/Invoke-WatchmenTest.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-WatchmenTest</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
 </helpItems>

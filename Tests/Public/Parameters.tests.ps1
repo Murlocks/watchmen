@@ -12,7 +12,7 @@ InModuleScope Watchmen {
                 }
             }
             Parameters @{ foo = 'bar' }
-            $script:watchmen.ThisTest.Parameters.foo | should be 'bar'
+            $script:watchmen.ThisTest.Parameters.foo | should -be 'bar'
         }
     }
 }

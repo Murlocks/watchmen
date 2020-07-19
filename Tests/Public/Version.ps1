@@ -12,7 +12,7 @@ InModuleScope Watchmen {
                 }
             }
             Version '0.1.0'
-            $script:watchmen.ThisTest.Version | should be '0.1.0'
+            $script:watchmen.ThisTest.Version | should -be '0.1.0'
         }
     }
 }
