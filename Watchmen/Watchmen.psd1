@@ -134,7 +134,7 @@ PrivateData = @{
 '
 
         # External dependent modules of this module
-        # ExternalModuleDependencies = ''
+        ExternalModuleDependencies = @('PSSlack', 'Posh-SYSLOG')
 
     } # End of PSData hashtable
 
